@@ -46,10 +46,10 @@ namespace Algoritm_RSA
             }
         }
 
-        public long N { get; private set; }
-        public long M { get; private set; }
-        public long E { get; private set; }
-        public long D { get; private set; }
+        public long N { get; private set; } // произведение простых чисел
+        public long M { get; private set; } // Значение функции Эйлера
+        public long E { get; private set; } // Часть открытого ключа, фзаимнопростое с М
+        public long D { get; private set; } // Часть закрытого ключа,
 
         public void Initialization(long p, long q)
         {
@@ -123,7 +123,7 @@ namespace Algoritm_RSA
         }
 
 
-
+        //Шифрование текста
         public string Encryption(string str)
         {
             char[] ch = str.ToCharArray();
@@ -139,6 +139,7 @@ namespace Algoritm_RSA
             return st;
         }
 
+        //Дешифрование текста
         public string Decryption(string str)
         {
             string[] st = str.Split(' ');
